@@ -24,6 +24,9 @@
 
   &.large {
     height: 380px;
+    @media screen and (max-width: 400px) {
+    	width: 100%;
+    }
   }
 
   .item-background {
