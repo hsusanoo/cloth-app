@@ -1,0 +1,34 @@
+.header {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+
+  .logo-container {
+    height: 70px;
+    width: 70px;
+
+    .logo {
+      width: 70px;
+      height: 70px;
+      fill: #252525;
+
+      &:hover {
+        fill: #121212;
+      }
+    }
+  }
+
+  .nav {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    .nav-item {
+      padding: 10px 15px;
+    }
+  }
+}
