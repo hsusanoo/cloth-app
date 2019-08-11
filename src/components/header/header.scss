@@ -12,7 +12,7 @@
     .logo {
       width: 70px;
       height: 70px;
-      fill: #252525;
+      fill: #333333;
 
       &:hover {
         fill: #121212;
@@ -29,6 +29,7 @@
 
     .nav-item {
       padding: 10px 15px;
+      cursor: pointer;
     }
   }
 }
