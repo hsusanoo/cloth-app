@@ -1,7 +1,7 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
 import CustomButton from '../../button/CustomButton';
-import {signInWithGoogle} from "../../../utils/firebase.utils";
+import {auth, signInWithGoogle} from "../../../utils/firebase.utils";
 import './sign-in.scss';
 
 export default class SignIn extends React.Component {
@@ -17,14 +17,21 @@ export default class SignIn extends React.Component {
 
     handleChange = e => {
         const {value, name} = e.target;
-        console.log(name, value);
         this.setState({
             [name]: value,
         });
     };
 
-    handleSubmit = e => {
+    handleSubmit = async e => {
+
         e.preventDefault();
+        const {email, password} = this.state;
+        try {
+            await auth.signInWithEmailAndPassword(email, password);
+        } catch (e) {
+            console.error(e);
+        }
+
         this.setState({
             email: '',
             password: '',
@@ -32,6 +39,7 @@ export default class SignIn extends React.Component {
     };
 
     render() {
+        const {email, password} = this.state;
         return (
             <div className={'sign-in'}>
                 <h2 className={'title'}>I already have an account</h2>
@@ -40,7 +48,7 @@ export default class SignIn extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                     <TextField
                         required
-                        value={this.state.email}
+                        value={email}
                         name="email"
                         label="Email"
                         margin="normal"
@@ -49,7 +57,7 @@ export default class SignIn extends React.Component {
                     />
                     <TextField
                         required
-                        value={this.state.password}
+                        value={password}
                         name="password"
                         label="Password"
                         margin="normal"
@@ -59,7 +67,7 @@ export default class SignIn extends React.Component {
                     <CustomButton type={'submit'} style={{marginTop: 30}}>
                         Submit
                     </CustomButton>
-                    <CustomButton isGoogle onClick={signInWithGoogle}>
+                    <CustomButton isGoogle type={'button'} onClick={signInWithGoogle}>
                         Sign in with Google
                     </CustomButton>
                 </form>
