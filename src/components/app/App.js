@@ -11,6 +11,8 @@ import Register from '../../pages/register/Register';
 import {auth, createUserProfileDocument} from "../../utils/firebase.utils";
 
 import './App.css';
+import {selectCurrentUser} from "../../redux/user/user.seletors";
+import {createStructuredSelector} from "reselect";
 
 class App extends React.Component {
 
@@ -56,8 +58,8 @@ class App extends React.Component {
     }
 }
 
-const mapStateToProps = ({user}) => ({ // destructuring userReducer
-    user: user.user     // pass as a prop
+const mapStateToProps = createStructuredSelector({
+    user: selectCurrentUser     // pass as a prop
 });
 
 const mapDispatchToProps = dispatch => ({ // trigger state change

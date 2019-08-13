@@ -9,6 +9,9 @@ import {ReactComponent as Logo} from '../../assets/images/crown.svg';
 import {auth} from "../../utils/firebase.utils";
 
 import './header.scss';
+import {selectCurrentUser} from "../../redux/user/user.seletors";
+import {selectCartHidden} from "../../redux/cart/cart.selectors";
+import {createStructuredSelector} from "reselect";
 
 const Header = ({user, hidden}) =>
     <div className={'header'}>
@@ -37,9 +40,9 @@ const Header = ({user, hidden}) =>
     </div>
 ;
 
-const mapStateToProps = ({user: {user}, cart: {hidden}}) => ({ // state === Redux store state
-    user,
-    hidden,
+const mapStateToProps = createStructuredSelector({ // state is automatically passed to selector functions
+    user: selectCurrentUser,
+    hidden: selectCartHidden,
 });
 
 export default connect(mapStateToProps)(Header);
