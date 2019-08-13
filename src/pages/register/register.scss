@@ -1,11 +1,14 @@
 .register {
+  width: 100%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  flex-wrap: wrap;
 
   form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 10px;
 
     div {
       width: 100%;
