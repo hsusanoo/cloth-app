@@ -2,7 +2,7 @@ import React from 'react';
 import {Redirect, Route, Switch} from "react-router-dom";
 import {connect} from "react-redux";
 
-import {setUser} from "../../redux/user.actions";
+import {setUser} from "../../redux/user/user.actions";
 
 import {HomePage} from '../../pages/homepage';
 import {Shop} from '../../pages/shop';

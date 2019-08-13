@@ -48,10 +48,10 @@ const Collection = ({title, items}) => {
                 <div className={'slider-container'}>
                     <Slider {...settings} className={'collection-preview'}>
                         {items
-                            .map(({...itemProps}, index) =>
+                            .map((item, index) =>
                                 <CollectionItem
                                     key={index}
-                                    {...itemProps}
+                                    item={item}
                                 />
                             )}
                     </Slider>
