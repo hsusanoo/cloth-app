@@ -1,26 +1,24 @@
 import React from 'react';
-import {Redirect, Route, Switch} from "react-router-dom";
-import {connect} from "react-redux";
+import { Redirect, Route, Switch } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-import {setUser} from "../../redux/user/user.actions";
+import { setUser } from '../../redux/user/user.actions';
 
-import {HomePage} from '../../pages/homepage';
-import {Shop} from '../../pages/shop';
-import Header from '../../components/header/Header';
+import { HomePage } from '../../pages/homepage';
+import { Shop } from '../../pages/shop';
+import Header from '../header/Header';
 import Register from '../../pages/register/Register';
-import {auth, createUserProfileDocument} from "../../utils/firebase.utils";
+import { auth, createUserProfileDocument } from '../../utils/firebase.utils';
 
 import './App.css';
-import {selectCurrentUser} from "../../redux/user/user.seletors";
-import {createStructuredSelector} from "reselect";
+import { selectCurrentUser } from '../../redux/user/user.seletors';
+import { createStructuredSelector } from 'reselect';
 
 class App extends React.Component {
-
     componentDidMount() {
-        const {setUser} = this.props; // we defined this prop in mapDispatchToProps below
+        const { setUser } = this.props; // we defined this prop in mapDispatchToProps below
 
         this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
-
             if (userAuth) {
                 const userRef = await createUserProfileDocument(userAuth);
                 userRef.onSnapshot(snapshot => {
@@ -32,8 +30,7 @@ class App extends React.Component {
             } else {
                 setUser(userAuth);
             }
-
-        })
+        });
     }
 
     componentWillUnmount() {
@@ -43,15 +40,16 @@ class App extends React.Component {
     render() {
         return (
             <div>
-                <Header/>
+                <Header />
                 <Switch>
-                    <Route exact path={'/'} component={HomePage}/>
-                    <Route path={'/shop'} component={Shop}/>
-                    <Route path={'/register'}
-                           render={() => this.props.user
-                               ? (<Redirect to={'/'}/>)
-                               : (<Register/>)
-                           }/>
+                    <Route exact path='/' component={HomePage} />
+                    <Route path='/shop' component={Shop} />
+                    <Route
+                        path='/register'
+                        render={() =>
+                            this.props.user ? <Redirect to='/' /> : <Register />
+                        }
+                    />
                 </Switch>
             </div>
         );
@@ -59,11 +57,15 @@ class App extends React.Component {
 }
 
 const mapStateToProps = createStructuredSelector({
-    user: selectCurrentUser     // pass as a prop
+    user: selectCurrentUser, // pass as a prop
 });
 
-const mapDispatchToProps = dispatch => ({ // trigger state change
-    setUser: user => dispatch(setUser(user)) // pass as a prop to App component to use whenever we want
+const mapDispatchToProps = dispatch => ({
+    // trigger state change
+    setUser: user => dispatch(setUser(user)), // pass as a prop to App component to use whenever we want
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(App);

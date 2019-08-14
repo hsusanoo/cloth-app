@@ -1,3 +1,3 @@
 import Shop from './Shop';
 
-export {Shop};
+export { Shop };

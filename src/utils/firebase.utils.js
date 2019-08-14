@@ -3,13 +3,13 @@ import 'firebase/auth';
 import 'firebase/firestore';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCfCCpc4W4rpyuUMQNb2kAFmIpfQfJLr80",
-    authDomain: "cloth-app.firebaseapp.com",
-    databaseURL: "https://cloth-app.firebaseio.com",
-    projectId: "cloth-app",
-    storageBucket: "",
-    messagingSenderId: "827176417513",
-    appId: "1:827176417513:web:fac7d5c3d6b6e503"
+    apiKey: 'AIzaSyCfCCpc4W4rpyuUMQNb2kAFmIpfQfJLr80',
+    authDomain: 'cloth-app.firebaseapp.com',
+    databaseURL: 'https://cloth-app.firebaseio.com',
+    projectId: 'cloth-app',
+    storageBucket: '',
+    messagingSenderId: '827176417513',
+    appId: '1:827176417513:web:fac7d5c3d6b6e503',
 };
 
 export const createUserProfileDocument = async (userAuth, additionalData) => {
@@ -20,7 +20,7 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
 
     // Add user to database
     if (!snapshot.exists) {
-        const {displayName, email} = userAuth;
+        const { displayName, email } = userAuth;
         const createdAt = new Date();
 
         try {
@@ -28,12 +28,11 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
                 displayName,
                 email,
                 createdAt,
-                ...additionalData
+                ...additionalData,
             });
         } catch (e) {
-            console.log('Error creating new user : ', e.message)
+            console.log('Error creating new user : ', e.message);
         }
-
     }
 
     return userRef;
