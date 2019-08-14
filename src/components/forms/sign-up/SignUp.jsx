@@ -1,7 +1,7 @@
-import React from 'react';
 import TextField from '@material-ui/core/TextField';
+import React from 'react';
+import { auth, createUserProfileDocument } from '../../../utils/firebase.utils';
 import CustomButton from '../../button/CustomButton';
-import {auth, createUserProfileDocument} from "../../../utils/firebase.utils";
 import './sign-up.scss';
 
 export default class SignUp extends React.Component {
@@ -14,12 +14,12 @@ export default class SignUp extends React.Component {
             email: '',
             password: '',
             confirmPassword: '',
-        }
+        };
     }
 
     handleSubmit = async e => {
         e.preventDefault();
-        const {displayName, email, password, confirmPassword} = this.state;
+        const { displayName, email, password, confirmPassword } = this.state;
 
         if (password !== confirmPassword) {
             alert('Passwords don\'t match');
@@ -27,8 +27,8 @@ export default class SignUp extends React.Component {
         }
 
         try {
-            const {user} = await auth.createUserWithEmailAndPassword(email, password);
-            await createUserProfileDocument(user, {displayName});
+            const { user } = await auth.createUserWithEmailAndPassword(email, password);
+            await createUserProfileDocument(user, { displayName });
 
         } catch (e) {
             console.error(e);
@@ -36,14 +36,14 @@ export default class SignUp extends React.Component {
     };
 
     handleChange = (e) => {
-        const {name, value} = e.target;
+        const { name, value } = e.target;
         this.setState({
             [name]: value,
-        })
+        });
     };
 
     render() {
-        const {displayName, email, password, confirmPassword} = this.state;
+        const { displayName, email, password, confirmPassword } = this.state;
         return (
             <div className={'sign-up'}>
                 <h2 className={'title'}>New User</h2>
@@ -84,7 +84,7 @@ export default class SignUp extends React.Component {
                         type={'password'}
                         onChange={this.handleChange}
                     />
-                    <CustomButton type={'submit'} style={{marginTop: 30}}>SIGN UP</CustomButton>
+                    <CustomButton type={'submit'} style={{ marginTop: 30 }}>SIGN UP</CustomButton>
                 </form>
             </div>
         );

@@ -1,6 +1,6 @@
 import React from 'react';
-import './homepage.scss';
 import Directory from '../../components/directory/Directory';
+import './homepage.scss';
 
 export default class HomePage extends React.Component {
     render() {

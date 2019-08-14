@@ -7,12 +7,15 @@ export const addItemToCart = (cartItems, itemToAdd) => {
         return cartItems.map(item =>
             item.name === itemToAdd.name // Replace by id when possible
                 ? {
-                      ...item,
-                      quantity: item.quantity + 1,
-                  }
+                    ...item,
+                    quantity: item.quantity + 1,
+                }
                 : item
         );
     }
 
-    return [...cartItems, { ...itemToAdd, quantity: 1 }];
+    return [...cartItems, {
+        ...itemToAdd,
+        quantity: 1
+    }];
 };

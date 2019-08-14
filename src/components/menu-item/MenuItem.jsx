@@ -1,6 +1,6 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import './menu-item.scss';
 
 const MenuItem = ({ title, imageUrl, size, linkUrl, match, history }) => (

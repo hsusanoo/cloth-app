@@ -1,18 +1,18 @@
 import React from 'react';
-import { Redirect, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { Redirect, Route, Switch } from 'react-router-dom';
+import { createStructuredSelector } from 'reselect';
 
-import { setUser } from '../../redux/user/user.actions';
-
+import Checkout from '../../pages/checkout/Checkout';
 import { HomePage } from '../../pages/homepage';
-import { Shop } from '../../pages/shop';
-import Header from '../header/Header';
 import Register from '../../pages/register/Register';
+import { Shop } from '../../pages/shop';
+import { setUser } from '../../redux/user/user.actions';
+import { selectCurrentUser } from '../../redux/user/user.seletors';
 import { auth, createUserProfileDocument } from '../../utils/firebase.utils';
+import Header from '../header/Header';
 
 import './App.css';
-import { selectCurrentUser } from '../../redux/user/user.seletors';
-import { createStructuredSelector } from 'reselect';
 
 class App extends React.Component {
     componentDidMount() {
@@ -50,6 +50,7 @@ class App extends React.Component {
                             this.props.user ? <Redirect to='/' /> : <Register />
                         }
                     />
+                    <Route exact path='/checkout' component={Checkout} />
                 </Switch>
             </div>
         );
@@ -65,7 +66,4 @@ const mapDispatchToProps = dispatch => ({
     setUser: user => dispatch(setUser(user)), // pass as a prop to App component to use whenever we want
 });
 
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

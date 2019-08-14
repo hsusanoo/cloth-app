@@ -1,7 +1,7 @@
-import React from 'react';
 import TextField from '@material-ui/core/TextField';
+import React from 'react';
+import { auth, signInWithGoogle } from '../../../utils/firebase.utils';
 import CustomButton from '../../button/CustomButton';
-import {auth, signInWithGoogle} from "../../../utils/firebase.utils";
 import './sign-in.scss';
 
 export default class SignIn extends React.Component {
@@ -12,11 +12,11 @@ export default class SignIn extends React.Component {
         this.state = {
             email: '',
             password: '',
-        }
+        };
     }
 
     handleChange = e => {
-        const {value, name} = e.target;
+        const { value, name } = e.target;
         this.setState({
             [name]: value,
         });
@@ -25,7 +25,7 @@ export default class SignIn extends React.Component {
     handleSubmit = async e => {
 
         e.preventDefault();
-        const {email, password} = this.state;
+        const { email, password } = this.state;
         try {
             await auth.signInWithEmailAndPassword(email, password);
         } catch (e) {
@@ -35,11 +35,11 @@ export default class SignIn extends React.Component {
         this.setState({
             email: '',
             password: '',
-        })
+        });
     };
 
     render() {
-        const {email, password} = this.state;
+        const { email, password } = this.state;
         return (
             <div className={'sign-in'}>
                 <h2 className={'title'}>I already have an account</h2>
@@ -64,7 +64,7 @@ export default class SignIn extends React.Component {
                         type={'password'}
                         onChange={this.handleChange}
                     />
-                    <CustomButton type={'submit'} style={{marginTop: 30}}>
+                    <CustomButton type={'submit'} style={{ marginTop: 30 }}>
                         Submit
                     </CustomButton>
                     <CustomButton isGoogle type={'button'} onClick={signInWithGoogle}>

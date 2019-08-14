@@ -1,9 +1,9 @@
 import React from 'react';
 import Slider from 'react-slick';
-import CollectionItem from './CollectionItem';
-import './collection.scss';
-import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import 'slick-carousel/slick/slick.css';
+import './collection.scss';
+import CollectionItem from './CollectionItem';
 
 const Collection = ({ title, items }) => {
     const settings = {
