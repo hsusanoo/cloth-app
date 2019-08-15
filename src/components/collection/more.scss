@@ -1,0 +1,26 @@
+.more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+  padding-top: 45%;
+
+  .arrow {
+    height: 15%;
+    width: 15%;
+    fill: #333;
+
+    &:hover {
+      fill: #0b0b0b;
+    }
+  }
+
+  span{
+    position: absolute;
+    top: 60%;
+  }
+
+}

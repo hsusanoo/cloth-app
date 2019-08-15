@@ -4,8 +4,9 @@ import 'slick-carousel/slick/slick-theme.css';
 import 'slick-carousel/slick/slick.css';
 import './collection.scss';
 import CollectionItem from './CollectionItem';
+import More from './More';
 
-const Collection = ({ title, items }) => {
+const Collection = ({ title, items, routeName }) => {
     const settings = {
         dots: true,
         infinite: false,
@@ -44,9 +45,12 @@ const Collection = ({ title, items }) => {
             <h1 className='collection-title'>{title.toUpperCase()}</h1>
             <div className='slider-container'>
                 <Slider {...settings} className='collection-preview'>
-                    {items.map((item, index) => (
-                        <CollectionItem key={index} item={item} />
-                    ))}
+                    {items
+                        .filter((item, index) => index < 6)
+                        .map((item, index) => (
+                            <CollectionItem key={index} item={item} />
+                        ))}
+                    <More routeName={routeName} />
                 </Slider>
             </div>
         </div>
