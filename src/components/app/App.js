@@ -66,4 +66,7 @@ const mapDispatchToProps = dispatch => ({
     setUser: user => dispatch(setUser(user)), // pass as a prop to App component to use whenever we want
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(App);

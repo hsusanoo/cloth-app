@@ -11,15 +11,12 @@
     height: 40px;
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #989898;
+    border-bottom: 2px solid #989898;
 
     .header-block {
       text-transform: capitalize;
-      width: 20%;
-
-      &:last-child {
-        width: 8%;
-      }
+      text-align: center;
+      width: 23%;
     }
   }
 

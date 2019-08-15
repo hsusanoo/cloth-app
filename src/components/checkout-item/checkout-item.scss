@@ -6,18 +6,44 @@
   padding: 15px 0;
   font-size: 20px;
   align-items: center;
+  justify-content: space-between;
 
   .image-container {
-    width: 20%;
+    width: 23%;
+    display: flex;
+    justify-content: center;
 
     img {
-      width: 100%;
-      height: 100%;
+      width: 70%;
+      height: 70%;
     }
   }
 
-  .name, .quantity, .price {
-    width: 20%;
-    margin-left: 30px;
+  .name {
+    width: 23%;
+    text-align: left;
+    padding-left: 25px;
+  }
+
+  .quantity, .price, .remove-button {
+    width: 23%;
+    text-align: center;
+  }
+
+  .quantity {
+    display: flex;
+    justify-content: space-evenly;
+
+    span {
+      cursor: pointer;
+      &.inactive{
+        cursor: auto;
+        opacity: 0.4;
+      }
+    }
+  }
+
+  .remove {
+    cursor: pointer;
   }
 }

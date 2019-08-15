@@ -3,7 +3,10 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import CheckoutItem from '../../components/checkout-item/CheckoutItem';
 
-import { selectCartItemPriceCount, selectCartItems, } from '../../redux/cart/cart.selectors';
+import {
+    selectCartItemPriceCount,
+    selectCartItems,
+} from '../../redux/cart/cart.selectors';
 
 import './checkout.scss';
 
