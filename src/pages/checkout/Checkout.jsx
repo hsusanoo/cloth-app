@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import CheckoutItem from '../../components/checkout-item/CheckoutItem';
+import StripeCheckoutButton from '../../components/stripe/StripeCheckoutButton';
 
 import {
     selectCartItemPriceCount,
@@ -35,6 +36,11 @@ const Checkout = ({ cartItems, totalPrice }) => (
         <div className='total'>
             <span>TOTAL: ${totalPrice}</span>
         </div>
+        <div className="payment-warning">
+            * Use the following test card for payment <br />
+            4242 4242 4242 4242 - Exp: 01/20 - CVV: 123
+        </div>
+        <StripeCheckoutButton price={totalPrice} />
     </div>
 );
 

@@ -20,9 +20,20 @@
     }
   }
 
+  button{
+    margin-left: auto;
+    margin-top: 30px;
+    width: 100px;
+  }
+
   .total {
     margin-top: 30px;
     margin-left: auto;
     font-size: 35px;
+  }
+  .payment-warning{
+    color: #d00000;
+    text-align: center;
+    margin: 30px;
   }
 }
