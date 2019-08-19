@@ -1,10 +1,16 @@
 import React from 'react';
 import Slider from 'react-slick';
-import 'slick-carousel/slick/slick-theme.css';
-import 'slick-carousel/slick/slick.css';
-import './collection.scss';
+
 import CollectionItem from './CollectionItem';
 import More from './More';
+
+import {
+    CollectionContainer,
+    CollectionTitle,
+    SliderContainer,
+} from './collection.styles';
+import 'slick-carousel/slick/slick-theme.css';
+import 'slick-carousel/slick/slick.css';
 
 const Collection = ({ title, items, routeName }) => {
     const settings = {
@@ -41,10 +47,10 @@ const Collection = ({ title, items, routeName }) => {
     };
 
     return (
-        <div className='collection'>
-            <h1 className='collection-title'>{title.toUpperCase()}</h1>
-            <div className='slider-container'>
-                <Slider {...settings} className='collection-preview'>
+        <CollectionContainer>
+            <CollectionTitle>{title.toUpperCase()}</CollectionTitle>
+            <SliderContainer>
+                <Slider {...settings}>
                     {items
                         .filter((item, index) => index < 6)
                         .map((item, index) => (
@@ -52,8 +58,8 @@ const Collection = ({ title, items, routeName }) => {
                         ))}
                     <More routeName={routeName} />
                 </Slider>
-            </div>
-        </div>
+            </SliderContainer>
+        </CollectionContainer>
     );
 };
 export default Collection;

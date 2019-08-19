@@ -5,39 +5,42 @@ import { createStructuredSelector } from 'reselect';
 import { toggleCartHidden } from '../../redux/cart/cart.actions';
 import { selectCartItems } from '../../redux/cart/cart.selectors';
 
-import CustomButton from '../button/CustomButton';
-
-import './cart-dropdown.scss';
 import CartItem from './CartItem';
+
+import {
+    CustomButtonContainer,
+    CartItemsContainer,
+    CartDropdownContainer,
+} from './cartDropdown.styles';
 
 const CartDropdown = ({ cartItems, history, dispatch }) => {
     const isEmpty = cartItems === undefined || cartItems.length === 0;
     return (
-        <div className={`${isEmpty && 'empty'} cart-dropdown`}>
+        <CartDropdownContainer>
             {isEmpty ? (
-                <span className={'cart-items'}>Empty</span>
+                <CartItemsContainer as={'span'}>Empty</CartItemsContainer>
             ) : (
-                <div className={'cart-items'}>
+                <CartItemsContainer>
                     {cartItems.map((item, index) => (
                         <CartItem key={index} item={item} />
                     ))}
-                </div>
+                </CartItemsContainer>
             )}
             {isEmpty ? (
-                <CustomButton onClick={() => <Redirect to='/shop' />}>
+                <CustomButtonContainer onClick={() => <Redirect to='/shop' />}>
                     SHOP NOW
-                </CustomButton>
+                </CustomButtonContainer>
             ) : (
-                <CustomButton
+                <CustomButtonContainer
                     onClick={() => {
                         history.push('/checkout');
                         dispatch(toggleCartHidden());
                     }}
                 >
                     GO TO CHECKOUT
-                </CustomButton>
+                </CustomButtonContainer>
             )}
-        </div>
+        </CartDropdownContainer>
     );
 };
 

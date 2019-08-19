@@ -1,17 +1,14 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
-import { ReactComponent as Arrow } from '../../assets/images/arrow-right-thin.svg';
-
-import './more.scss';
+import { Arrow, MoreArrowContainer, StyledSpan } from './more.styles';
 
 const More = ({ routeName, match, history }) => (
-    <div
-        className='more'
+    <MoreArrowContainer
         onClick={() => history.push(`${match.url}/${routeName}`)}
     >
-        <Arrow className='arrow' />
-        <span>See more</span>
-    </div>
+        <Arrow />
+        <StyledSpan>See more</StyledSpan>
+    </MoreArrowContainer>
 );
 export default withRouter(More);

@@ -1,8 +1,11 @@
 import TextField from '@material-ui/core/TextField';
 import React from 'react';
+
 import { auth, signInWithGoogle } from '../../../utils/firebase.utils';
+
 import CustomButton from '../../button/CustomButton';
-import './sign-in.scss';
+
+import {RegisterContainer, StyledTitle, StyledForm} from "../registerForm.styles";
 
 export default class SignIn extends React.Component {
 
@@ -41,11 +44,11 @@ export default class SignIn extends React.Component {
     render() {
         const { email, password } = this.state;
         return (
-            <div className={'sign-in'}>
-                <h2 className={'title'}>I already have an account</h2>
+            <RegisterContainer>
+                <StyledTitle>I already have an account</StyledTitle>
                 <span>Sign In with your E-mail and password</span>
 
-                <form onSubmit={this.handleSubmit}>
+                <StyledForm onSubmit={this.handleSubmit}>
                     <TextField
                         required
                         value={email}
@@ -70,8 +73,8 @@ export default class SignIn extends React.Component {
                     <CustomButton isGoogle type={'button'} onClick={signInWithGoogle}>
                         Sign in with Google
                     </CustomButton>
-                </form>
-            </div>
+                </StyledForm>
+            </RegisterContainer>
         );
     }
 }

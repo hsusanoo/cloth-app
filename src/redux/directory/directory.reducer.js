@@ -30,7 +30,7 @@ const INITIAL_STATE = {
             title: 'Men Fashion',
             imageUrl:
                 'https://images.pexels.com/photos/842811/pexels-photo-842811.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-            linkUrl: 'man',
+            linkUrl: 'men',
         },
     ],
 };

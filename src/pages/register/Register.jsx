@@ -1,13 +1,15 @@
 import React from 'react';
+
 import SignIn from '../../components/forms/sign-in/SignIn';
 import SignUp from '../../components/forms/sign-up/SignUp';
-import './register.scss';
+
+import { RegisterContainer } from './register.styles';
 
 const Register = () => (
-    <div className='register'>
+    <RegisterContainer>
         <SignIn />
         <SignUp />
-    </div>
+    </RegisterContainer>
 );
 
 export default Register;

@@ -1,8 +1,11 @@
 import TextField from '@material-ui/core/TextField';
 import React from 'react';
+
 import { auth, createUserProfileDocument } from '../../../utils/firebase.utils';
+
 import CustomButton from '../../button/CustomButton';
-import './sign-up.scss';
+
+import {RegisterContainer, StyledTitle, StyledForm} from "../registerForm.styles";
 
 export default class SignUp extends React.Component {
 
@@ -45,10 +48,10 @@ export default class SignUp extends React.Component {
     render() {
         const { displayName, email, password, confirmPassword } = this.state;
         return (
-            <div className={'sign-up'}>
-                <h2 className={'title'}>New User</h2>
+            <RegisterContainer>
+                <StyledTitle>New User</StyledTitle>
                 <span>Sign up with email</span>
-                <form onSubmit={this.handleSubmit}>
+                <StyledForm onSubmit={this.handleSubmit}>
                     <TextField
                         required
                         value={displayName}
@@ -85,8 +88,8 @@ export default class SignUp extends React.Component {
                         onChange={this.handleChange}
                     />
                     <CustomButton type={'submit'} style={{ marginTop: 30 }}>SIGN UP</CustomButton>
-                </form>
-            </div>
+                </StyledForm>
+            </RegisterContainer>
         );
     }
 }

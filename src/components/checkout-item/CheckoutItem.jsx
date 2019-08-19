@@ -1,33 +1,48 @@
 import React from 'react';
 import { connect } from 'react-redux';
+
 import { clearItem, removeItem, addItem } from '../../redux/cart/cart.actions';
 
-import './checkout-item.scss';
+import {
+    CheckoutItemContainer,
+    ImageContainer,
+    StyledArrow,
+    StyledImage,
+    StyledName,
+    StyledPrice,
+    StyledQuantity,
+    RemoveButtonContainer,
+    StyledRemoveButton,
+} from './checkoutItem.styles';
 
 const CheckoutItem = ({ item, clearItem, removeItem, addItem }) => {
     const { name, imageUrl, price, quantity } = item;
     return (
-        <div className='checkout-item'>
-            <div className='image-container'>
-                <img src={imageUrl} alt='item' />
-            </div>
-            <span className='name'>{name}</span>
-            <div className='quantity'>
+        <CheckoutItemContainer>
+            <ImageContainer>
+                <StyledImage src={imageUrl} alt='item' />
+            </ImageContainer>
+            <StyledName>{name}</StyledName>
+            <StyledQuantity>
                 {quantity === 1 ? (
-                    <span className='inactive'>&#10094;</span>
+                    <StyledArrow inactive>&#10094;</StyledArrow>
                 ) : (
-                    <span onClick={() => removeItem(item)}>&#10094;</span>
+                    <StyledArrow onClick={() => removeItem(item)}>
+                        &#10094;
+                    </StyledArrow>
                 )}
                 {quantity}
-                <span onClick={() => addItem(item)}>&#10095;</span>
-            </div>
-            <span className='price'>${price}</span>
-            <div className='remove-button'>
-                <span className='remove' onClick={() => clearItem(item)}>
+                <StyledArrow onClick={() => addItem(item)}>
+                    &#10095;
+                </StyledArrow>
+            </StyledQuantity>
+            <StyledPrice>${price}</StyledPrice>
+            <RemoveButtonContainer>
+                <StyledRemoveButton onClick={() => clearItem(item)}>
                     &#10005;
-                </span>
-            </div>
-        </div>
+                </StyledRemoveButton>
+            </RemoveButtonContainer>
+        </CheckoutItemContainer>
     );
 };
 

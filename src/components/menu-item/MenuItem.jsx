@@ -1,22 +1,30 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import './menu-item.scss';
+
+import {
+    MenuItemContainer,
+    StyledContent,
+    StyledItemBackground,
+    StyledContentSubtitle,
+    StyledContentTitle,
+} from './menuItem.styles';
 
 const MenuItem = ({ title, imageUrl, size, linkUrl, match, history }) => (
-    <div
-        className={`${size} menu-item`}
+    <MenuItemContainer
+        className={`${size}`}
         onClick={() => history.push(`${match.url}shop/${linkUrl}`)}
     >
-        <div
-            className='item-background'
-            style={{ backgroundImage: `url(${imageUrl})` }}
-        />
-        <div className='content'>
-            <h1 className='content-title'>{title.toUpperCase()}</h1>
-            <span className='content-subtitle'>SHOP NOW</span>
-        </div>
-    </div>
+        <StyledItemBackground style={{ backgroundImage: `url(${imageUrl})` }} />
+        <StyledContent>
+            <StyledContentTitle>
+                {title.toUpperCase()}
+            </StyledContentTitle>
+            <StyledContentSubtitle>
+                SHOP NOW
+            </StyledContentSubtitle>
+        </StyledContent>
+    </MenuItemContainer>
 );
 
 MenuItem.propTypes = {
