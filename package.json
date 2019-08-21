@@ -20,7 +20,7 @@
     "redux-persist": "^5.10.0",
     "reselect": "^4.0.0",
     "slick-carousel": "^1.8.1",
-    "styled-components": "^4.3.2"
+    "styled-components": "^5.0.0-beta.8"
   },
   "scripts": {
     "start": "react-scripts start",

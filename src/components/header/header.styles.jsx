@@ -26,7 +26,7 @@ export const Logo = styled(LogoSvg)`
     }
 `;
 
-export const NavContainer = styled(Link)`
+export const NavContainer = styled.div`
     height: 100%;
     width: 50%;
     display: flex;
