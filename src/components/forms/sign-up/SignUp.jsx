@@ -1,13 +1,13 @@
 import TextField from '@material-ui/core/TextField';
 import React from 'react';
-
-import { auth, createUserProfileDocument } from '../../../utils/firebase.utils';
+import { connect } from "react-redux";
+import { signUpStart } from "../../../redux/user/user.actions";
 
 import CustomButton from '../../button/CustomButton';
 
 import {RegisterContainer, StyledTitle, StyledForm} from "../registerForm.styles";
 
-export default class SignUp extends React.Component {
+class SignUp extends React.Component {
 
     constructor(props) {
         super(props);
@@ -22,6 +22,7 @@ export default class SignUp extends React.Component {
 
     handleSubmit = async e => {
         e.preventDefault();
+        const {signUpStart} = this.props;
         const { displayName, email, password, confirmPassword } = this.state;
 
         if (password !== confirmPassword) {
@@ -29,13 +30,8 @@ export default class SignUp extends React.Component {
             return;
         }
 
-        try {
-            const { user } = await auth.createUserWithEmailAndPassword(email, password);
-            await createUserProfileDocument(user, { displayName });
+        signUpStart({displayName,email,password});
 
-        } catch (e) {
-            console.error(e);
-        }
     };
 
     handleChange = (e) => {
@@ -93,3 +89,9 @@ export default class SignUp extends React.Component {
         );
     }
 }
+
+const mapDispatchToProps = dispatch => ({
+    signUpStart: credentials => dispatch(signUpStart(credentials)),
+});
+
+export default connect(null, mapDispatchToProps)(SignUp);

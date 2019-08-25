@@ -5,6 +5,7 @@ const cartActionTypes = {
     REMOVE_ITEM: 'REMOVE_ITEM',
     // Completely remove item from cart
     CLEAR_ITEM_FROM_CART: 'CLEAR_ITEM_FROM_CART',
+    CLEAR_CART: 'CLEAR_CART',
 };
 
 export default cartActionTypes;

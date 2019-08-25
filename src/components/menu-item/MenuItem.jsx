@@ -17,12 +17,8 @@ const MenuItem = ({ title, imageUrl, size, linkUrl, match, history }) => (
     >
         <StyledItemBackground style={{ backgroundImage: `url(${imageUrl})` }} />
         <StyledContent>
-            <StyledContentTitle>
-                {title.toUpperCase()}
-            </StyledContentTitle>
-            <StyledContentSubtitle>
-                SHOP NOW
-            </StyledContentSubtitle>
+            <StyledContentTitle>{title.toUpperCase()}</StyledContentTitle>
+            <StyledContentSubtitle>SHOP NOW</StyledContentSubtitle>
         </StyledContent>
     </MenuItemContainer>
 );
