@@ -6,7 +6,7 @@ import { selectCartHidden } from '../../redux/cart/cart.selectors';
 import { signOutStart } from '../../redux/user/user.actions';
 import { selectCurrentUser } from '../../redux/user/user.seletors';
 
-import { auth } from '../../utils/firebase.utils';
+
 import CartDropdown from '../cart/CartDropdown';
 import CartIcon from '../cart/CartIcon';
 
