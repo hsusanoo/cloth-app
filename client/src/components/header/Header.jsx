@@ -24,7 +24,6 @@ const Header = ({ user, hidden, signOutStart }) => (
         </LogoContainer>
         <NavContainer>
             <NavItemLink to='/shop'>SHOP</NavItemLink>
-            <NavItemLink to='/contact'>CONTACT</NavItemLink>
             {user ? (
                 <NavItemLink as={'div'} onClick={signOutStart}>
                     SIGN OUT
