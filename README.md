@@ -7,7 +7,7 @@
 
 A sample e-commerce clothing application, built with React, Redux, JavaScript, and CSS.
 
-## Live Demo:
+## Live Demo
 
 https://cloth-app.herokuapp.com/
 
@@ -55,10 +55,14 @@ To Visit App:
 ### JavaScript
 
 - [ESLint](https://eslint.org) : JavaScript and JSX Linter.
+
 - [React](https://reactjs.org) : Library for building UI.
+
 - [Redux](https://redux.js.org) : Library for managing application state.
+
 - [Node.js](https://nodejs.org) / [Express](https://expressjs.com) : Node.js for server side coding, used with 
 express framework.
+
 - [axios](https://github.com/axios/axios) : Promise based HTTP client for the browser and node.js.
 
 ### CSS
