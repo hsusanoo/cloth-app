@@ -9,7 +9,7 @@ A sample e-commerce clothing application, built with React, Redux, JavaScript, a
 
 ## Live Demo
 
-`https://cloth-app.herokuapp.com/`
+<https://cloth-app.herokuapp.com/>
 
 ## Project Screen Shots
 
@@ -42,7 +42,7 @@ key from the stripe dashboard. [Learn More](https://stripe.com/docs/keys).
 In the project root directory, create a `.env` file, type `STRIPE_SECRET_KEY=secret_key`, replacing `secret_key` with
  your own Stripe secret key. [Learn More](https://stripe.com/docs/keys).
 
-### Start Server:
+### Start Server
 
 `npm dev` or `yarn dev` in project root directory.
 
