@@ -1,3 +1,4 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/a3f9afe2e6a94053a30ef3ca0e720cf6)](https://app.codacy.com/manual/hsusanoo/cloth-app?utm_source=github.com&utm_medium=referral&utm_content=hsusanoo/cloth-app&utm_campaign=Badge_Grade_Dashboard)
 [![GitHub license](https://img.shields.io/github/license/hsusanoo/cloth-app?style=flat-square)](https://github.com/hsusanoo/cloth-app/blob/master/LICENSE)
 [![Dependency Status](https://img.shields.io/david/hsusanoo/cloth-app.svg?style=flat-square)](https://david-dm.org/hsusanoo/cloth-app)
 [![devDependency Status](https://img.shields.io/david/dev/hsusanoo/cloth-app.svg?style=flat-square)](https://david-dm.org/hsusanoo/cloth-app#info=devDependencies)
