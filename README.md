@@ -9,7 +9,7 @@ A sample e-commerce clothing application, built with React, Redux, JavaScript, a
 
 ## Live Demo
 
-https://cloth-app.herokuapp.com/
+`https://cloth-app.herokuapp.com/`
 
 ## Project Screen Shots
 
@@ -54,33 +54,38 @@ To Visit App:
 
 ### JavaScript
 
-- [ESLint](https://eslint.org) : JavaScript and JSX Linter.
+-  [ESLint](https://eslint.org) : JavaScript and JSX Linter.
 
-- [React](https://reactjs.org) : Library for building UI.
+-  [React](https://reactjs.org) : Library for building UI.
 
-- [Redux](https://redux.js.org) : Library for managing application state.
+-  [Redux](https://redux.js.org) : Library for managing application state.
 
-- [Node.js](https://nodejs.org) / [Express](https://expressjs.com) : Node.js for server side coding, used with 
+-  [Node.js](https://nodejs.org) / [Express](https://expressjs.com) : Node.js for server side coding, used with 
 express framework.
 
-- [axios](https://github.com/axios/axios) : Promise based HTTP client for the browser and node.js.
+-  [axios](https://github.com/axios/axios) : Promise based HTTP client for the browser and node.js.
 
 ### CSS
 
-- [Styled Components](https://www.styled-components.com) : CSS-in-JS library.
+-  [Styled Components](https://www.styled-components.com) : CSS-in-JS library.
 
 ### Extra
 
-- [Firebase](https://firebase.google.com/) : Realtime database + users authentication management.
-- [Stripe](https://stripe.com/) : Online payment platform.
+-  [Firebase](https://firebase.google.com/) : Realtime database + users authentication management.
+
+-  [Stripe](https://stripe.com/) : Online payment platform.
 
 ## Functionality overview
 
-- Sign-up / Sign-in using email or google account.
-- Browse items by category.
-- Add items to cart.
-- Show cart content information (quantity of each article, total price...)
-- Checkout items using Stripe with a given test credit card information to use.
+-  Sign-up / Sign-in using email or google account.
+
+-  Browse items by category.
+
+-  Add items to cart.
+
+-  Show cart content information (quantity of each article, total price...)
+
+-  Checkout items using Stripe with a given test credit card information to use.
 
 ## Reflection
 
