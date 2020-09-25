@@ -90,6 +90,11 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
+"@types/node@>=8.1.0":
+  version "14.11.2"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.11.2.tgz#2de1ed6670439387da1c9f549a2ade2b0a799256"
+  integrity sha512-jiE3QIxJ8JLNcb1Ps6rDbysDhN4xa8DJJvuC9prr6w+1tIh+QAbYyNF3tyiZNLDBIuBCf4KEcV2UvQm/V60xfA==
+
 abbrev@1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"
@@ -2710,11 +2715,12 @@ strip-json-comments@~2.0.1:
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
   integrity sha1-PFMZQukIwml8DsNEhYwobHygpgo=
 
-stripe@7.8.0:
-  version "7.8.0"
-  resolved "https://registry.yarnpkg.com/stripe/-/stripe-7.8.0.tgz#4b21a21721cb4a20fbc5c5c97ea32bf690262ed6"
-  integrity sha512-Tmq0xB68W2e4m1FCHLly1dr6SXg+m4cXKhN77NCRkiefaetq/H2+8jDKYerY63Otd6fsRmWTVjuqy+NfUkVVwQ==
+stripe@8.100.0:
+  version "8.100.0"
+  resolved "https://registry.yarnpkg.com/stripe/-/stripe-8.100.0.tgz#0220173edbae62a9247f807aca8efe68616ad338"
+  integrity sha512-jf4Opqg1Y/mm7U+9jcnNp3bNDlJToX1JUbM/gA0tu40YMI5ez8hgMcRU0z8j+4fc8rQPx1CaJ9M5nvq/STFN7Q==
   dependencies:
+    "@types/node" ">=8.1.0"
     qs "^6.6.0"
 
 supports-color@^4.5.0:
