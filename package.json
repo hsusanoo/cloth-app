@@ -25,6 +25,6 @@
     "babel-eslint": "10.0.2",
     "concurrently": "^4.0.1",
     "eslint": "^7.10.0",
-    "nodemon": "^1.19.1"
+    "nodemon": "^2.0.5"
   }
 }
