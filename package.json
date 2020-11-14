@@ -1,10 +1,6 @@
 {
   "name": "cloth-app-server",
   "version": "1.0.0",
-  "engines": {
-    "node": "12.8.0",
-    "npm": "6.10.3"
-  },
   "scripts": {
     "client": "cd client && yarn start",
     "server": "nodemon server.js",
