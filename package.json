@@ -20,7 +20,7 @@
   "devDependencies": {
     "babel-eslint": "10.1.0",
     "concurrently": "^6.2.0",
-    "eslint": "^7.27.0",
+    "eslint": "^7.28.0",
     "nodemon": "^2.0.7"
   }
 }
