@@ -15,7 +15,7 @@
     "cors": "2.8.5",
     "dotenv": "16.0.3",
     "express": "^4.18.2",
-    "stripe": "11.1.0"
+    "stripe": "11.2.0"
   },
   "devDependencies": {
     "babel-eslint": "10.1.0",
