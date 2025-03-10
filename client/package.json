@@ -5,7 +5,7 @@
   "proxy": "http://localhost:5000",
   "dependencies": {
     "@material-ui/core": "^4.3.2",
-    "axios": "^1.7.4",
+    "axios": "^1.8.2",
     "firebase": "^10.9.0",
     "node-sass": "^7.0.0",
     "prop-types": "^15.7.2",
