@@ -13,7 +13,7 @@
     "body-parser": "^2.2.0",
     "compression": "1.8.0",
     "cors": "2.8.5",
-    "dotenv": "16.4.7",
+    "dotenv": "16.5.0",
     "express": "^5.1.0",
     "stripe": "18.0.0"
   },
