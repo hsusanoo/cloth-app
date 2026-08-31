@@ -1448,10 +1448,10 @@ strip-ansi@^7.1.0:
   dependencies:
     ansi-regex "^6.2.2"
 
-stripe@22.5.0:
-  version "22.5.0"
-  resolved "https://registry.yarnpkg.com/stripe/-/stripe-22.5.0.tgz#78efe2b9ebcb167da966c356138f2f5ceb3f443e"
-  integrity sha512-QVwMwriC0bbySx6R4dpsvJ0W//GojC1kwWVS6rPSoVqDUIZX4Hy3TaUrd2AZeXEAaKbfWIjQjvo3vKAReHZ0vQ==
+stripe@22.6.0:
+  version "22.6.0"
+  resolved "https://registry.yarnpkg.com/stripe/-/stripe-22.6.0.tgz#4a4b31587ca41d4ba60f1fc34ff6bdc900dc7b2d"
+  integrity sha512-Ezk+WYEEwX2DLxFrKfb6coznlCMZvCaCYMNPXNHFSZkBIEzF5Hgm7RLb38q/0h9Ol5jsUJGJRorvhzAvckgfhw==
 
 supports-color@10.2.2:
   version "10.2.2"
