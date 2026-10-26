@@ -10,7 +10,7 @@
     "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
   },
   "dependencies": {
-    "body-parser": "^2.3.0",
+    "body-parser": "^2.4.0",
     "compression": "1.8.2",
     "cors": "2.8.6",
     "dotenv": "18.0.8",
